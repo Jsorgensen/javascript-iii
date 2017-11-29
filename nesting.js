@@ -63,7 +63,18 @@ employees.map(emp => console.log(emp));
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
-
+var removeDuplicates = () => {
+  var hashmap = {};
+  return workplaceAccidents.filter(id => {
+    if(!id in hashmap){
+      hashmap[id] = 1;
+      return true;
+    }else{
+      hashmap[id]++
+      return false;
+    }
+  });
+}
 
 
 
