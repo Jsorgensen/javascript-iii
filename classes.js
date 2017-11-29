@@ -61,10 +61,8 @@ class Manager extends Employee{
         this.reports.push(employee);
     }
 
-    fire(employee){
-        var index = reports.indexOf(employee);
-        if(index > -1)
-            this.reports = this.reports.splice(index, 1);
+    fire(index){
+        this.reports.splice(index, 1);
     }
 }
 var stu = new Manager('Stu', 'Lkj', 'sl@cough.com', 700);
