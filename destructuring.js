@@ -48,7 +48,6 @@ var ingredients = (obj) => {
   var {carb, fat, protein} = obj;
   return [carb, fat, protein];
 }
-
 // ========================
 
 
@@ -61,11 +60,23 @@ var ingredients = (obj) => {
 // Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
 
   // CODE HERE
-
-
+var largeNumbers = ({first, second, third}) => {
+  var arr = [first, second, third];
+  arr = arr.sort((a, b) => a > b);
+  return arr[0];
+}
 // ========================
 
 
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+var numberGroups = ({a, b, c}) => {
+  var result = a;
+  if(b.length > a.length)
+    result = b;
+  if(c.length > result.length)
+    result = c;
+
+  return result;
+}
