@@ -66,16 +66,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 var removeDuplicates = () => {
   var hashmap = {};
   return workplaceAccidents.filter(id => {
-    if(!id in hashmap){
-      hashmap[id] = 1;
-      return true;
-    }else{
+    if (id in hashmap) {
       hashmap[id]++
       return false;
+    } else {
+      hashmap[id] = 1;
+      return true;
     }
   });
 }
-
+console.log('workplace accidents');
+console.log(removeDuplicates());
 
 
 
@@ -106,7 +107,8 @@ var cat = {
 var grumpyActivity;
 var fluffy2ndFriend;
 
-
+grumpyActivity = cat.catFriends[0].activities[1];
+fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
