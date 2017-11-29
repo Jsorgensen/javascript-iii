@@ -168,6 +168,18 @@ recordCleaner();
 
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
+var looper = () => {
+  for(var i=0; i<numsArr.length; i++){
+    for(var j=0; j<numsArr[i].length; j++){
+      var temp = numsArr;
+      if(numsArr[i][j] % 2 === 0)
+        numsArr[i][j] = 'even';
+      else
+        numsArr[i][j] = 'odd';
+    }
+  }
 
+  return numsArr;
+}
 
-
+console.log(numsArr);
