@@ -21,7 +21,18 @@ Each employee can:
 
 call your class Employee and receive all the data in the constructor in the order listed
 */
+class Employee{
+    constructor(first_name, last_name, email, age){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.age = age;
+    }
 
+    makeWidget() {
+        return this.first_name + ' ' + this.last_name + ' Widget';
+    }
+}
 
 
 /*
@@ -40,9 +51,24 @@ They can (methods) :
 call your class Manager
 
 */
+class Manager extends Employee{
+    constructor(first_name, last_name, email, age){
+        super(first_name, last_name, email, age);
+        this.reports = [];
+    }
 
+    hire(employee){
+        this.reports.push(employee);
+    }
 
-
+    fire(employee){
+        var index = reports.indexOf(employee);
+        if(index > -1)
+            this.reports = this.reports.splice(index, 1);
+    }
+}
+var stu = new Manager('Stu', 'Lkj', 'sl@cough.com', 700);
+console.log(stu);
 
 
 /*
@@ -64,7 +90,41 @@ Everytime they fire an employee they get $100 added to their bonus.
 
 call your class ProgressiveManager
 */
+/* class ProgressiveManager extends Manager{
+    constructor(first_name, last_name, email, age){
+        super(first_name, last_name, email, age);
 
+        this.title = 'Not a manager';
+        this.bonus = 0;
+    }
+
+    updateTitle(){
+        if (reports.length == 0)
+            this.title = 'Not a manager';
+        else if (1 <= reports.length && reports.length <= 3)
+            this.title = 'Barely Manager';
+        else if (4 <= reports.length <= 10)
+            this.title = 'Mostly Manager';
+        else if(11 <= reports.length && reports.length <= 50)
+            this.title = 'Manager';
+        else if(51 <= reports.length && reports.length <= 100)
+            this.title = 'Manager Plus';
+        else if(reports.length >= 101)
+            this.title = 'Bestest Manager';
+    }
+
+    hire(employee){
+        super(employee);
+
+        updateTitle();
+    }
+
+    fire(employee){
+        super(employee);
+
+        updateTitle();
+    }
+} */
 
 
 
